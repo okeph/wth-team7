@@ -21,5 +21,5 @@ jobs:
           subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
           resourceGroupName: ${{ vars.RESOURCEGROUPNAME }}
           template: './InfrastructureAsCode/main.bicep'
-          parameters: 'environment=test'
+          parameters: 'environment=prod'
           failOnStdErr: false
