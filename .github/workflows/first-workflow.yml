@@ -16,10 +16,9 @@ jobs:
         run: echo "Running Step 1"
       - name: step2
         run: echo "Running Step 2"
-      - name: step3
-        run: echo "OUTPUT=$MY_VARIABLE" >> "$GITHUB_OUTPUT"
-        id: step3
-        continue-on-error: true
+      
+      outputs:
+        EnvOutput: ${{ env.MY_VARIABLE }}
 
   job2:
     needs: job1
@@ -28,5 +27,5 @@ jobs:
       - name: step4
         uses: mscoutermarsh/cowsays-action@master
         with:
-          text: ${{ needs.job1.steps.step3.outputs.OUTPUT }}
+          text: ${{ needs.job1.outputs.EnvOutput }}
           color: 'red'
