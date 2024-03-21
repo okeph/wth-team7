@@ -1,5 +1,15 @@
-    steps:
-    - name: step1
-      run: echo "Running Step 1"
-    - name: step2
-      run: echo "Running Step 2"
+
+name: Manually Run Workflow
+
+on:
+    workflow_dispatch:
+
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: step1
+          run: echo "Running Step 1"
+        - name: step2
+          run: echo "Running Step 2"
