@@ -10,12 +10,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-        
+
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.CLIENTID }}
-          password: ${{ secrets.CLIENTSECRET }}
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: Deploy ARM Template
         uses: azure/arm-deploy@v1
         with:
