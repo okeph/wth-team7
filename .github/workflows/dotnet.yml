@@ -32,3 +32,18 @@ jobs:
           dotnet build --no-restore Application/src/RazorPagesTestSample/RazorPagesTestSample.csproj
       - name: Test
         run: dotnet test --no-build --verbosity normal Application/tests/RazorPagesTestSample.Tests/RazorPagesTestSample.Tests.csproj
+      - name: Create GitHub issue on failure
+        if: ${{ failure() }}
+        uses: actions/github-script@v4
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issueTitle = "Workflow Failed";
+            const issueBody = `The workflow run for commit ${process.env.GITHUB_SHA} failed. Please investigate and fix the issue.`;
+            const octokit = require('@octokit/rest')();
+            octokit.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: issueTitle,
+              body: issueBody
+            });
