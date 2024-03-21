@@ -14,5 +14,6 @@
 				"GitHub.copilot-chat"
 			]
 		}
-    }
+    },
+    "postCreateCommand": "dotnet restore"
 }
