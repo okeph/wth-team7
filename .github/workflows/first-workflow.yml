@@ -17,6 +17,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: step4
-          uses: peter-evans/cowsay-action@v2
+          uses: mscoutermarsh/cowsays-action@master
           with:
             text: "Moo!"
+            color: 'red'
