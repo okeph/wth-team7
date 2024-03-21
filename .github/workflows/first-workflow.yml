@@ -17,8 +17,8 @@ jobs:
       - name: step2
         run: echo "Running Step 2"
       
-      outputs:
-        EnvOutput: ${{ env.MY_VARIABLE }}
+    outputs:
+      EnvOutput: ${{ env.MY_VARIABLE }}
 
   job2:
     needs: job1
