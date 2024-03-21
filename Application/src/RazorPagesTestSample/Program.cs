@@ -12,7 +12,6 @@ namespace RazorPagesTestSample
     {
         public static void Main(string[] args)
         {
-            // Comment added
             var host = CreateHostBuilder(args).Build();
 
             using (var scope = host.Services.CreateScope())
