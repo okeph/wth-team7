@@ -15,5 +15,5 @@
 			]
 		}
     },
-    "postCreateCommand": "dotnet restore"
+    "postCreateCommand": "dotnet restore Application/src/**/*.csproj && dotnet restore Application/tests/**/*.csproj"
 }
