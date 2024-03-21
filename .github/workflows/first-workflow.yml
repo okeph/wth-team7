@@ -19,4 +19,4 @@ jobs:
         - name: step4
           uses: peter-evans/cowsay-action@v2
           with:
-          text: "Moo!"
+            text: "Moo!"
