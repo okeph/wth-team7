@@ -18,9 +18,11 @@ jobs:
   job2:
     needs: job1
     runs-on: ubuntu-latest
+    env:
+      MY_VARIABLE: Woof!
     steps:
       - name: step4
         uses: mscoutermarsh/cowsays-action@master
         with:
-          text: "Moo!"
+          text: ${{ env.MY_VARIABLE }}
           color: 'red'
